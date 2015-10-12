@@ -2,6 +2,13 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+/**
+ * 
+ * @author Galuh Estya A.
+ * @npm 1406559036
+ * @ver 1.0
+ *
+ */
 public class EuclideanGCD {
 	public static void main(String[] args) throws IOException {
 		BufferedReader reader = new BufferedReader(new InputStreamReader(
@@ -54,6 +61,13 @@ public class EuclideanGCD {
 		}
 	}
 
+	/**
+	 * 
+	 * @param source first number (must be bigger than target)
+	 * @param target second number
+	 * @param result GCD
+	 * @return GCD
+	 */
 	public static int euclidR(int source, int target, int result) {
 		int quotient = source / target;
 		int remainder = source % target;

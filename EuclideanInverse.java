@@ -2,6 +2,13 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+/**
+ * 
+ * @author Galuh Estya A.
+ * @npm 1406559036
+ * @ver 1.0
+ *
+ */
 public class EuclideanInverse {
 	public static void main(String[] args) throws IOException {
 		BufferedReader reader = new BufferedReader(new InputStreamReader(
@@ -27,41 +34,51 @@ public class EuclideanInverse {
 				System.out.println("Terminating Program.");
 				System.exit(0);
 			}
-			/*
-			 *Menyimpan input yang asli 
-			 */
-			int Ai = source;
-			int Mi = target;
 			
-			/*
-			 * Swap posisi jika Ai lebih kecil dari Mi
-			 */
-			if (source < target) {
-				source = target;
-				target = Ai;
-			}
-			/*
-			 * Index 0 stores GCD 
-			 * Index 1 stores prev Y 
-			 * Index 2 stores before-prev Y 
-			 * Index 3 stores prev quotient 
-			 * Index 4 stores number of steps needed to compute the GCD 
-			 */
-			int[] result = { 0, 1, 0, 0, 0 };
-
-			/*
-			 * Menggunakan yang telah di swap(jika swap)
-			 */
-			result = euclidR(source, target, result);
-
-			int inverse = result[1] * result[3] + result[2];
-			/*
-			 * Menggunakan yang asli
-			 */
-			if ((inverse * Ai) - (result[1] * Mi) < 0)
-				inverse = -inverse;
+			int inverse = Inverse(source,target);
+			
 			System.out.println(inverse);
 		}
+	}
+	
+	/*
+	 * Processing input & output
+	 */
+	public static int Inverse(int source, int target)	{
+		/*
+		 *Menyimpan input yang asli 
+		 */
+		int Ai = source;
+		int Mi = target;
+		
+		/*
+		 * Swap posisi jika Ai lebih kecil dari Mi
+		 */
+		if (source < target) {
+			source = target;
+			target = Ai;
+		}
+		/*
+		 * Index 0 stores GCD 
+		 * Index 1 stores prev Y 
+		 * Index 2 stores before-prev Y 
+		 * Index 3 stores prev quotient 
+		 * Index 4 stores number of steps needed to compute the GCD 
+		 */
+		int[] result = { 0, 1, 0, 0, 0 };
+
+		/*
+		 * Menggunakan yang telah di swap(jika swap)
+		 */
+		result = euclidR(source, target, result);
+
+		int inverse = result[1] * result[3] + result[2];
+		/*
+		 * Menggunakan yang asli
+		 */
+		if ((inverse * Ai) - (result[1] * Mi) < 0)
+			inverse = -inverse;
+		return inverse;
 	}
 
 	/**
