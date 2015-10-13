@@ -50,13 +50,15 @@ public class EuclideanInverse {
 		 */
 		int Ai = source;
 		int Mi = target;
-		
+		boolean swapped = false;
 		/*
 		 * Swap posisi jika Ai lebih kecil dari Mi
 		 */
 		if (source < target) {
+			int temp = source;
 			source = target;
-			target = Ai;
+			target = temp;
+			swapped = !swapped;
 		}
 		/*
 		 * Index 0 stores GCD 
@@ -71,14 +73,27 @@ public class EuclideanInverse {
 		 * Menggunakan yang telah di swap(jika swap)
 		 */
 		result = euclidR(source, target, result);
-
-		int inverse = result[1] * result[3] + result[2];
+		
 		/*
 		 * Menggunakan yang asli
 		 */
-		if ((inverse * Ai) - (result[1] * Mi) < 0)
-			inverse = -inverse;
-		if(inverse < 0) inverse += Ai;
+		int inverse = 0;
+		
+		int temp = result[1];
+		int newY = result[1] * result[3] + result[2];
+		result[2] = temp;
+		if(swapped)	{
+			inverse = newY;
+			if ((inverse * Ai) - (result[2] * Mi) < 0)
+				inverse = -inverse;
+		}
+		else {
+			inverse = result[2];
+			if ((inverse * Ai) - (newY * Mi) < 0)	{
+				inverse = -inverse;
+			}
+		}
+		while(inverse < 0) inverse += Mi;
 		return inverse;
 	}
 
