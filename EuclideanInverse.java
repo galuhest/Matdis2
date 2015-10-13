@@ -78,6 +78,7 @@ public class EuclideanInverse {
 		 */
 		if ((inverse * Ai) - (result[1] * Mi) < 0)
 			inverse = -inverse;
+		if(inverse < 0) inverse += Ai;
 		return inverse;
 	}
 

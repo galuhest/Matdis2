@@ -3,6 +3,11 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
+/**
+ * 
+ * @author user
+ *
+ */
 public class PemangkatanModular {
 	public static void main(String[] args) throws IOException {
 		BufferedReader read = new BufferedReader(new InputStreamReader(
@@ -13,6 +18,7 @@ public class PemangkatanModular {
 		int mod = 0;
 		for (int i = 0; i < input; i++) {
 			StringTokenizer token = new StringTokenizer(read.readLine());
+			
 			base = Integer.parseInt(token.nextToken());
 			power = Integer.parseInt(token.nextToken());
 			mod = Integer.parseInt(token.nextToken());
@@ -21,6 +27,13 @@ public class PemangkatanModular {
 		}
 	}
 
+	/**
+	 * 
+	 * @param base base number
+	 * @param power exponent
+	 * @param mod mod value
+	 * @return base^power % value
+	 */
 	public static int modularExponentiation(int base, int power, int mod) {
 		int result = 1;
 		int new_base = base;
