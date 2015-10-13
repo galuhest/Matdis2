@@ -23,7 +23,7 @@ public class PemangkatanModular {
 			power = Integer.parseInt(token.nextToken());
 			mod = Integer.parseInt(token.nextToken());
 			
-			System.out.println(modularExponentiation(base, power, mod));
+			System.out.println((int) modularExponentiation(base, power, mod));
 		}
 	}
 
@@ -34,15 +34,15 @@ public class PemangkatanModular {
 	 * @param mod mod value
 	 * @return base^power % value
 	 */
-	public static int modularExponentiation(int base, int power, int mod) {
-		int result = 1;
+	public static double modularExponentiation(int base, int power, int mod) {
+		double result = 1;
 		int new_base = base;
 		int exp = power;
 		int binary_value = power;
 		while (exp > 0) {
 			binary_value = exp & 1;
 			if(binary_value==1) {
-				result = (result*new_base) % mod;
+				result = ((result % mod )* (new_base % mod)) % mod;
 			}
 			new_base =(int) Math.pow(new_base, 2) % mod;
 			exp = exp / 2;
