@@ -14,7 +14,7 @@ import java.util.Scanner;
  * @since 14/10/2015
  */
 
-public class ModularExponentiation {
+public class Tugas_4 {
 	
 	/**
 	 * Main method to run the program.
