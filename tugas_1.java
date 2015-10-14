@@ -11,7 +11,7 @@ import java.util.Scanner;
  * @since 14/10/2015
  */
 
-public class Tugas_1 {
+public class tugas_1 {
 
 	/**
 	 * Main method to run the program.
