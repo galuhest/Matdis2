@@ -8,7 +8,7 @@ import java.io.IOException;
  * @NPM 1406623682
  * @ver 1.1
  */
-public class CRT {
+public class tugas_5 {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int sumCase = Integer.parseInt(br.readLine());
