@@ -9,7 +9,7 @@ import java.io.InputStreamReader;
  * @ver 1.0
  *
  */
-public class EuclideanInverse {
+public class tugas_3 {
 	public static void main(String[] args) throws IOException {
 		BufferedReader reader = new BufferedReader(new InputStreamReader(
 				System.in));
