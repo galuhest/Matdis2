@@ -2,11 +2,20 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.IOException;
 
+/**
+ * 
+ * @author M. Hazman Ihsan A.
+ * @NPM 1406623682
+ * @ver 1.1
+ */
 public class CRT {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int sumCase = Integer.parseInt(br.readLine());
 
+		/*
+		 * Looping input
+		 */
 		for (int i = 0; i < sumCase; i++) {
 			int eq = Integer.parseInt(br.readLine());
 			int[] arr_a = new int[eq];
@@ -14,30 +23,35 @@ public class CRT {
 			int[] arr_M = new int[eq];
 			int m = 1;
 			int x = 0;
-			// String x = "";
-
+			
+			/*
+			 * Looping all the equations to obtain ai and mi value
+			 */
 			for (int j = 0; j < eq; j++) {
 				String[] tmp = br.readLine().split(" ");
 				arr_a[j] = Integer.parseInt(tmp[0]);
 				arr_m[j] = Integer.parseInt(tmp[1]);
-				m *= arr_m[j];
+				m *= arr_m[j]; //while looping the m value is timed with curent mi
 			}
-
+			
+			/*
+			 * After the m value is obtained, we can find the Mi value
+			 */
 			for (int k = 0; k < eq; k++) {
 				arr_M[k] = m / arr_m[k];
 			}
-
+			
+			/*
+			 * Calculate the x value by continously adding with ai, Mi, and inverse of Mi mod mi
+			 */
 			for (int l = 0; l < eq; l++) {
-				int tmpM = arr_M[l];
-				// System.out.println(tmpM);
-				int tmpm = arr_m[l];
-				// System.out.println(tmpm);
-				// x += " + " + arr_a[l] + "*" + arr_M[l] + "*" + inverse(tmpM,
-				// tmpm);
+				int tmpM = arr_M[l]; //temporary value of Mi
+				int tmpm = arr_m[l]; //temporary value of mi
+				
 				int inverse = Inverse(tmpM, tmpm);
-				x += (arr_a[l] * arr_M[l] * inverse) % m;
+				x += (arr_a[l] * arr_M[l] * inverse) % m; //mod the current times value by m in case the value is too big
 			}
-			System.out.println(x % m);
+			System.out.println(x % m); //mod the x value by m in case the x value is too big
 		}
 	}
 
