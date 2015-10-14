@@ -9,7 +9,7 @@ import java.io.InputStreamReader;
  * @ver 1.0
  *
  */
-public class EuclideanGCD {
+public class tugas_2 {
 	public static void main(String[] args) throws IOException {
 		BufferedReader reader = new BufferedReader(new InputStreamReader(
 				System.in));
