@@ -11,7 +11,7 @@ import java.util.Scanner;
  * @since 14/10/2015
  */
 
-public class Factorization {
+public class Tugas_1 {
 
 	/**
 	 * Main method to run the program.
