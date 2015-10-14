@@ -49,7 +49,7 @@ public class tugas_1 {
 					
 			if(listOfFactors.size() <= 1) {
 				
-				results.add("Prima");
+				results.add(number+"");
 				
 			}
 		

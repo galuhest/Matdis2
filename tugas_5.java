@@ -3,6 +3,8 @@ import java.io.InputStreamReader;
 import java.io.IOException;
 
 /**
+ * This program find the solution for linear congruency system with more than 1 equation
+ * using tugas_3 parts
  * 
  * @author M. Hazman Ihsan A.
  * @NPM 1406623682

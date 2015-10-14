@@ -3,6 +3,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 /**
+ * This piece of program compute GCD and LCM of 2 integer
+ * using Euclidean Algorithm
  * 
  * @author Galuh Estya A.
  * @npm 1406559036

@@ -1,9 +1,6 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class ModularExponentiation import java.util.ArrayList;
-import java.util.Scanner;
-
 /**
  * 
  * This program counts and shows the result of Modular Exponentiation.

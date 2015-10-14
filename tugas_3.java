@@ -3,6 +3,9 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 /**
+ * This piece of program compute the Inverse of a linear congruency system
+ * using Extended Euclidean Algorithm
+ * source : http://www.millersville.edu/~bikenaga/number-theory/exteuc/exteuc.html
  * 
  * @author Galuh Estya A.
  * @npm 1406559036
