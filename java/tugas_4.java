@@ -72,7 +72,7 @@ public class tugas_4 {
 		while(basePower > 0) {
 			
 			if(basePower % 2 == 1) {
-				result = (int) ((result % modular) * poweredNumber) % modular;
+				result = ((result % modular) * poweredNumber) % modular;
 			}
 			
 			poweredNumber = ((int) Math.pow(poweredNumber, 2) % modular);
